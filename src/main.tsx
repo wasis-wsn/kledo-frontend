@@ -2,13 +2,13 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import './index.css'
-import { regionsLoader } from './routes/region-data'
-import FilterPage from './FilterPage'
+import FilterPage, { regionsAction, regionsLoader } from './FilterPage'
 
 const router = createBrowserRouter([
   {
     path: '/',
     loader: regionsLoader,
+    action: regionsAction,
     element: <FilterPage />,
   },
 ])
